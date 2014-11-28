@@ -6,6 +6,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 
+
 public class MainActivity extends Activity {
 
     @Override
@@ -28,7 +29,6 @@ public class MainActivity extends Activity {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
