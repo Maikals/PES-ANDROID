@@ -6,5 +6,6 @@
     <string name="action_settings">Settings</string>
     <string name="iniciar_venta">Iniciar Venta</string>
     <string name="sortir">Sortir</string>
+    <string name="title_activity_escanejar_codi">EscanejarCodi</string>
 
 </resources>

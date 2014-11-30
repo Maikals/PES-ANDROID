@@ -16,6 +16,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.pes.maikals.quiosquer.EscanejarCodi"
+            android:label="@string/title_activity_escanejar_codi" >
+        </activity>
     </application>
 
 </manifest>
