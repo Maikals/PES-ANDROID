@@ -21,7 +21,7 @@ public class MainActivity extends Activity {
     }
 
     public void tancar(View v) {
-        System.exit(0);
+        finish();
     }
 
     @Override

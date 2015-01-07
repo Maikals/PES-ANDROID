@@ -10,6 +10,9 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import Domini.Val;
+import ServiceLayer.ApiService;
+
 //import com.google.zxing.integration.android.IntentIntegrator;
 //import com.google.zxing.integration.android.IntentResult;
 
@@ -17,16 +20,14 @@ import android.widget.Toast;
 public class EscanejarCodi extends Activity implements View.OnClickListener {
     //public int SCANNER_REQUEST_CODE = 123;
     private Button scanBtn;
-    private TextView formatTxt, contentTxt;
-
+    private boolean escanejat;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_escanejar_codi);
         scanBtn = (Button)findViewById(R.id.scan_button);
-        formatTxt = (TextView)findViewById(R.id.scan_format);
-        contentTxt = (TextView)findViewById(R.id.scan_content);
         scanBtn.setOnClickListener(this);
+        escanejat = false;
     }
 
 
@@ -61,20 +62,36 @@ public class EscanejarCodi extends Activity implements View.OnClickListener {
             //- See more at: http://techiedreams.com/android-zxing-barcode-scanner-integration/#sthash.vh810gy0.dpuf
         }
     }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (escanejat) finish();
+    }
+
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent intent) {
         //IntentResult result = IntentIntegrator.parseActivityResult(requestCode, resultCode, intent);
         if (resultCode == Activity.RESULT_OK) {
             // Handle successful scan
             String contents = intent.getStringExtra("SCAN_RESULT");
-            String formatName = intent.getStringExtra("SCAN_RESULT_FORMAT");
-            contentTxt.setText(contents);
-            formatTxt.setText(formatName);
-
+            Val v = ApiService.getVal(contents);
+            if (v != null) {
+                escanejat = true;
+                Intent intent2 = new Intent(this, ValInfo.class);
+                intent2.putExtra("id", contents);
+                startActivity(intent2);
+            }
+            else Toast.makeText(getApplicationContext(), "Codi de val incorrecte o caducat", Toast.LENGTH_LONG).show();
         } else if (resultCode == Activity.RESULT_CANCELED) {
             Toast toast = Toast.makeText(getApplicationContext(),
                     "No scan data received!", Toast.LENGTH_SHORT);
             toast.show();
         }
+    }
+
+    public void entrarCodiManual(View view) {
+        Intent intent = new Intent(this, EntradaCodiManual.class);
+        startActivity(intent);
     }
 }

@@ -7,28 +7,22 @@
     tools:context="com.pes.maikals.quiosquer.EscanejarCodi">
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="New Button"
+        android:layout_width="300dip"
+        android:layout_height="130dip"
+        android:text="@string/escanejar"
         android:id="@+id/scan_button"
+        android:layout_marginTop="83dp"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="New Text"
-        android:id="@+id/scan_format"
+        android:layout_alignParentLeft="true" />
+    <Button
+        android:layout_width="100dip"
+        android:layout_height="50dip"
+        android:text="@string/entrar"
+        android:id="@+id/codi"
+        android:onClick="entrarCodiManual"
+        android:layout_marginTop="65dp"
         android:layout_below="@+id/scan_button"
-        android:layout_alignLeft="@+id/scan_button"
+        android:layout_alignParentLeft="true"
         android:layout_alignRight="@+id/scan_button" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="New Text"
-        android:id="@+id/scan_content"
-        android:layout_alignLeft="@+id/scan_format"
-        android:layout_below="@+id/scan_format"
-        android:layout_alignRight="@+id/scan_format" />
 </RelativeLayout>

@@ -7,5 +7,18 @@
     <string name="iniciar_venta">Iniciar Venta</string>
     <string name="sortir">Sortir</string>
     <string name="title_activity_escanejar_codi">EscanejarCodi</string>
+    <string name="title_activity_login">Login</string>
+    <string name="email">email</string>
+    <string name="Pass">Password</string>
+    <string name="escanejar">Escanejar</string>
+    <string name="entrar">Entrar codi manualment</string>
+    <string name="codi_manual">Codi:</string>
+    <string name="title_activity_val_info">ValInfo</string>
+    <string name="publicacio">Publicació:</string>
+    <string name="data">Data:</string>
+    <string name="confirmacio">Confirmar entrega</string>
+    <string name="title_activity_entrada_codi_manual">EntradaCodiManual</string>
+    <string name="coditext">Codi:</string>
+    <string name="acceptar">Acceptar</string>
 
 </resources>
